@@ -2,8 +2,10 @@
 
 import { useState, useEffect, useRef } from "react";
 import { MdBlurOn, MdPlayArrow, MdPause } from "react-icons/md";
+import { useLanguage } from "@/providers/Providers";
 
 export default function MotionBlurTest() {
+    const { t } = useLanguage();
     const [isPlaying, setIsPlaying] = useState(true);
     const [speed, setSpeed] = useState(10);
     const requestRef = useRef<number>(0);
@@ -36,15 +38,15 @@ export default function MotionBlurTest() {
             <header className="flex items-center justify-between pb-6 border-b border-slate-200/10 mb-8">
                 <div>
                     <h1 className="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">
-                        Motion Blur Test
+                        {t.motionBlur.title}
                     </h1>
                     <p className="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal mt-1">
-                        Track the moving object to check for ghosting and motion blur.
+                        {t.motionBlur.subtitle}
                     </p>
                 </div>
                 <div className="flex items-center gap-4">
                     <div className="flex items-center gap-2">
-                        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Speed:</span>
+                        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{t.motionBlur.speed}</span>
                         <input
                             type="range"
                             min="1"
@@ -59,7 +61,7 @@ export default function MotionBlurTest() {
                         className="flex items-center gap-2 px-4 py-2 bg-primary text-white hover:bg-primary/90 rounded-lg font-medium transition-colors"
                     >
                         {isPlaying ? <MdPause /> : <MdPlayArrow />}
-                        {isPlaying ? "Pause" : "Play"}
+                        {isPlaying ? t.motionBlur.pause : "Play"}
                     </button>
                 </div>
             </header>
@@ -79,7 +81,7 @@ export default function MotionBlurTest() {
                     <div className="w-4 h-full absolute bg-red-500/20 -z-10 blur-sm"></div>
                     <MdBlurOn className="text-6xl text-primary" />
                     <span className="text-slate-900 dark:text-white font-bold whitespace-nowrap">
-                        Motion Test
+                        {t.motionBlur.motionTest}
                     </span>
                     <div className="flex gap-1">
                         <div className="w-2 h-8 bg-red-500"></div>
@@ -97,9 +99,9 @@ export default function MotionBlurTest() {
             </div>
 
             <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 text-blue-800 dark:text-blue-200 rounded-lg text-sm">
-                <p className="font-bold mb-1">Instructions:</p>
+                <p className="font-bold mb-1">{t.motionBlur.instructions}</p>
                 <p>
-                    Follow the moving icon with your eyes. If you see a significant trail or &quot;ghost&quot; behind the object, your monitor may have slow pixel response times. Adjust the speed to test different motion rates.
+                    {t.motionBlur.instructionText}
                 </p>
             </div>
         </div>

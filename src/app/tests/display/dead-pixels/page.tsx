@@ -2,8 +2,10 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { MdFullscreen, MdArrowForward, MdClose } from "react-icons/md";
+import { useLanguage } from "@/providers/Providers";
 
 export default function DeadPixelTest() {
+    const { t } = useLanguage();
     const [isActive, setIsActive] = useState(false);
     const [colorIndex, setColorIndex] = useState(0);
 
@@ -96,10 +98,10 @@ export default function DeadPixelTest() {
             <header className="flex items-center justify-between pb-6 border-b border-slate-200/10">
                 <div>
                     <h1 className="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">
-                        Dead Pixel Test
+                        {t.deadPixels.title}
                     </h1>
                     <p className="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal mt-1">
-                        Launch a full-screen solid color sequence to easily spot dead or stuck pixels.
+                        {t.deadPixels.subtitle}
                     </p>
                 </div>
             </header>
@@ -108,10 +110,10 @@ export default function DeadPixelTest() {
             <div className="mt-12 flex flex-col items-center justify-center gap-8 text-center">
                 <div className="max-w-xl text-slate-600 dark:text-slate-300">
                     <p className="mb-4">
-                        This test will cycle through solid colors (White, Black, Red, Green, Blue).
+                        {t.deadPixels.instruction}
                     </p>
                     <p>
-                        Look closely at your screen for any pixels that do not change color (stuck) or remain black (dead).
+                        {t.deadPixels.lookClosely}
                     </p>
                 </div>
 
@@ -120,7 +122,7 @@ export default function DeadPixelTest() {
                     className="flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-xl text-lg font-bold hover:bg-primary/90 transition-transform hover:scale-105 shadow-lg shadow-primary/20"
                 >
                     <MdFullscreen size={24} />
-                    Start Dead Pixel Test
+                    {t.deadPixels.startTest}
                     <MdArrowForward size={24} />
                 </button>
 

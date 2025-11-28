@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { MdFullscreen, MdClose } from "react-icons/md";
+import { useLanguage } from "@/providers/Providers";
 
 export default function ColorAccuracyTest() {
+    const { t } = useLanguage();
     const [fullScreenColor, setFullScreenColor] = useState<string | null>(null);
 
     const colors = [
@@ -66,10 +68,10 @@ export default function ColorAccuracyTest() {
             <header className="flex items-center justify-between pb-6 border-b border-slate-200/10">
                 <div>
                     <h1 className="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">
-                        Color Accuracy
+                        {t.colorAccuracy.title}
                     </h1>
                     <p className="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal mt-1">
-                        Select a pattern to check your screen&apos;s color reproduction and gradients.
+                        {t.colorAccuracy.subtitle}
                     </p>
                 </div>
             </header>
@@ -79,7 +81,7 @@ export default function ColorAccuracyTest() {
                 {/* Solid Colors */}
                 <div>
                     <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">
-                        Solid Colors
+                        {t.colorAccuracy.solidColors}
                     </h3>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                         {colors.map((color) => (
@@ -101,7 +103,7 @@ export default function ColorAccuracyTest() {
                 {/* Gradients */}
                 <div>
                     <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">
-                        Gradients
+                        {t.colorAccuracy.gradients}
                     </h3>
                     <div className="grid grid-cols-1 gap-4">
                         {gradients.map((gradient) => (

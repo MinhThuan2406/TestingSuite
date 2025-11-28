@@ -2,8 +2,10 @@
 
 import { useState, useRef, useEffect } from "react";
 import { MdMic, MdVolumeUp, MdGraphicEq } from "react-icons/md";
+import { useLanguage } from "@/providers/Providers";
 
 export default function AudioTest() {
+    const { t } = useLanguage();
     const [isMicActive, setIsMicActive] = useState(false);
     const [frequency, setFrequency] = useState(440);
     const [isPlayingTone, setIsPlayingTone] = useState(false);
@@ -171,10 +173,10 @@ export default function AudioTest() {
             <header className="flex items-center justify-between pb-6 border-b border-slate-200/10 mb-8">
                 <div>
                     <h1 className="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">
-                        Audio Test
+                        {t.audio.title}
                     </h1>
                     <p className="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal mt-1">
-                        Test your speakers, microphone, and frequency response.
+                        {t.audio.subtitle}
                     </p>
                 </div>
             </header>
@@ -184,23 +186,23 @@ export default function AudioTest() {
                 <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
                     <div className="flex items-center gap-3 mb-4">
                         <MdVolumeUp className="text-primary text-2xl" />
-                        <h2 className="text-xl font-bold text-slate-900 dark:text-white">Stereo Test</h2>
+                        <h2 className="text-xl font-bold text-slate-900 dark:text-white">{t.audio.stereoTest}</h2>
                     </div>
                     <p className="text-slate-500 dark:text-slate-400 mb-6">
-                        Click the buttons below to test left and right channels independently.
+                        {t.audio.stereoDesc}
                     </p>
                     <div className="flex gap-4">
                         <button
                             onClick={() => playStereoTest("left")}
                             className="flex-1 py-3 px-4 bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white rounded-lg font-medium transition-colors"
                         >
-                            Left Channel
+                            {t.audio.leftChannel}
                         </button>
                         <button
                             onClick={() => playStereoTest("right")}
                             className="flex-1 py-3 px-4 bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white rounded-lg font-medium transition-colors"
                         >
-                            Right Channel
+                            {t.audio.rightChannel}
                         </button>
                     </div>
                 </div>
@@ -209,11 +211,11 @@ export default function AudioTest() {
                 <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
                     <div className="flex items-center gap-3 mb-4">
                         <MdGraphicEq className="text-primary text-2xl" />
-                        <h2 className="text-xl font-bold text-slate-900 dark:text-white">Frequency Generator</h2>
+                        <h2 className="text-xl font-bold text-slate-900 dark:text-white">{t.audio.frequencyGenerator}</h2>
                     </div>
                     <div className="flex flex-col gap-4">
                         <div className="flex justify-between items-center">
-                            <span className="text-slate-500 dark:text-slate-400">Frequency: {frequency} Hz</span>
+                            <span className="text-slate-500 dark:text-slate-400">{t.audio.frequency} {frequency} Hz</span>
                             <button
                                 onClick={toggleTone}
                                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${isPlayingTone
@@ -221,7 +223,7 @@ export default function AudioTest() {
                                     : "bg-primary text-white hover:bg-primary/90"
                                     }`}
                             >
-                                {isPlayingTone ? "Stop Tone" : "Play Tone"}
+                                {isPlayingTone ? "Stop Tone" : t.audio.playTone}
                             </button>
                         </div>
                         <input
@@ -245,7 +247,7 @@ export default function AudioTest() {
                     <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-3">
                             <MdMic className="text-primary text-2xl" />
-                            <h2 className="text-xl font-bold text-slate-900 dark:text-white">Microphone Test</h2>
+                            <h2 className="text-xl font-bold text-slate-900 dark:text-white">{t.audio.microphoneTest}</h2>
                         </div>
                         <button
                             onClick={toggleMic}
@@ -254,7 +256,7 @@ export default function AudioTest() {
                                 : "bg-primary text-white hover:bg-primary/90"
                                 }`}
                         >
-                            {isMicActive ? "Stop Mic" : "Start Mic"}
+                            {isMicActive ? "Stop Mic" : t.audio.startMic}
                         </button>
                     </div>
                     <div className="w-full h-48 bg-black rounded-lg overflow-hidden relative">
@@ -266,7 +268,7 @@ export default function AudioTest() {
                         />
                         {!isMicActive && (
                             <div className="absolute inset-0 flex items-center justify-center text-slate-500">
-                                Click &quot;Start Mic&quot; to visualize audio input
+                                {t.audio.micInstruction}
                             </div>
                         )}
                     </div>

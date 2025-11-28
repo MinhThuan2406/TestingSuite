@@ -23,7 +23,7 @@ export default function Home() {
       title: t.dashboard.cards.display.title,
       description: t.dashboard.cards.display.description,
       icon: <MdDesktopWindows />,
-      path: "/tests/display/dead-pixels",
+      path: "/tests/display/brightness",
     },
     {
       title: t.dashboard.cards.audio.title,
@@ -74,14 +74,14 @@ export default function Home() {
   return (
     <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-background text-foreground group/design-root">
       <div className="layout-container flex h-full grow flex-col">
-        <div className="flex flex-1 justify-center py-5">
+        <div className="flex flex-1 justify-center py-1">
           <div className="layout-content-container flex flex-col w-full max-w-5xl px-4">
 
 
             <main className="flex-grow">
               {/* Hero Section */}
-              <div className="py-16 sm:py-24 text-center">
-                <div className="flex flex-col gap-4">
+              <div className="py-2 sm:py-3 text-center">
+                <div className="flex flex-col gap-1">
                   <h1 className="text-4xl font-black leading-tight tracking-tighter sm:text-5xl text-gray-900 dark:text-white">
                     {t.dashboard.heroTitle}
                   </h1>
@@ -92,7 +92,7 @@ export default function Home() {
               </div>
 
               {/* Test Grid */}
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 p-4">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-4 pb-12 justify-items-center">
                 {tests.map((test, index) => (
                   <TestCard
                     key={index}
@@ -100,6 +100,7 @@ export default function Home() {
                     description={test.description}
                     icon={test.icon}
                     onClick={() => handleTestClick(test.path)}
+                    startTestLabel={t.common.startTest}
                   />
                 ))}
               </div>

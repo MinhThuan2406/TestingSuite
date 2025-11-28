@@ -1,17 +1,19 @@
 "use client";
 
 import { MdContrast } from "react-icons/md";
+import { useLanguage } from "@/providers/Providers";
 
 export default function ContrastTest() {
+    const { t } = useLanguage();
     return (
         <div className="mx-auto max-w-6xl p-8">
             <header className="flex items-center justify-between pb-6 border-b border-slate-200/10 mb-8">
                 <div>
                     <h1 className="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">
-                        Contrast Test
+                        {t.contrast.title}
                     </h1>
                     <p className="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal mt-1">
-                        Check your display&apos;s dynamic range and contrast ratio.
+                        {t.contrast.subtitle}
                     </p>
                 </div>
             </header>
@@ -19,9 +21,9 @@ export default function ContrastTest() {
             <div className="flex flex-col gap-8">
                 {/* White Saturation */}
                 <div className="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
-                    <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">White Saturation</h2>
+                    <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">{t.contrast.whiteSaturation}</h2>
                     <p className="text-sm text-slate-500 mb-4">
-                        You should be able to distinguish each block from the background.
+                        {t.contrast.whiteSaturationDesc}
                     </p>
                     <div className="grid grid-cols-12 h-32 gap-1">
                         {Array.from({ length: 12 }).map((_, i) => {
@@ -41,9 +43,9 @@ export default function ContrastTest() {
 
                 {/* Black Level */}
                 <div className="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
-                    <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Black Level</h2>
+                    <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">{t.contrast.blackLevel}</h2>
                     <p className="text-sm text-slate-500 mb-4">
-                        You should be able to distinguish each block from the background.
+                        {t.contrast.blackLevelDesc}
                     </p>
                     <div className="grid grid-cols-12 h-32 gap-1 bg-black p-1">
                         {Array.from({ length: 12 }).map((_, i) => {

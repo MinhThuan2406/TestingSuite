@@ -8,8 +8,9 @@ import {
     MdGridOn,
     MdBlurOn,
     MdContrast,
-    MdArrowBack,
+    MdDesktopWindows,
 } from "react-icons/md";
+import { useLanguage } from "@/providers/Providers";
 
 export default function DisplayLayout({
     children,
@@ -17,30 +18,31 @@ export default function DisplayLayout({
     children: React.ReactNode;
 }) {
     const pathname = usePathname();
+    const { t } = useLanguage();
 
     const navItems = [
         {
-            name: "Brightness",
+            name: t.display.brightness,
             href: "/tests/display/brightness",
             icon: <MdBrightnessMedium />,
         },
         {
-            name: "Color Accuracy",
+            name: t.display.colorAccuracy,
             href: "/tests/display/color-accuracy",
             icon: <MdPalette />,
         },
         {
-            name: "Dead Pixels",
+            name: t.display.deadPixels,
             href: "/tests/display/dead-pixels",
             icon: <MdGridOn />,
         },
         {
-            name: "Motion Blur",
+            name: t.display.motionBlur,
             href: "/tests/display/motion-blur",
             icon: <MdBlurOn />,
         },
         {
-            name: "Contrast",
+            name: t.display.contrast,
             href: "/tests/display/contrast",
             icon: <MdContrast />,
         },
@@ -58,10 +60,10 @@ export default function DisplayLayout({
                             </div>
                             <div className="flex flex-col">
                                 <h1 className="text-slate-900 dark:text-white text-base font-medium leading-normal">
-                                    Display Testing
+                                    {t.display.sidebarTitle}
                                 </h1>
                                 <p className="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">
-                                    PC Hardware Tools
+                                    {t.display.sidebarSubtitle}
                                 </p>
                             </div>
                         </div>
@@ -107,5 +109,3 @@ export default function DisplayLayout({
         </div>
     );
 }
-
-import { MdDesktopWindows } from "react-icons/md";

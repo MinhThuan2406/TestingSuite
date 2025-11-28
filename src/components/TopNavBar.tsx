@@ -5,12 +5,19 @@ import { usePathname } from "next/navigation";
 import { MdDashboard, MdDarkMode, MdLightMode, MdTranslate } from "react-icons/md";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/providers/Providers";
+import { useState, useEffect } from "react";
 
 export default function TopNavBar() {
     const pathname = usePathname();
     const isHomePage = pathname === "/";
     const { theme, setTheme } = useTheme();
     const { locale, setLocale, t } = useLanguage();
+    const [mounted, setMounted] = useState(false);
+
+    // Only render theme icon after mounting to prevent hydration errors
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     const toggleTheme = () => {
         setTheme(theme === "dark" ? "light" : "dark");
@@ -21,7 +28,7 @@ export default function TopNavBar() {
     };
 
     return (
-        <header className="flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-b-[#283239] px-4 sm:px-10 py-3 bg-background text-foreground transition-colors">
+        <header className="flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-b-[#283239] px-4 sm:px-10 py-1 bg-background text-foreground transition-colors">
             <Link href="/" className="flex items-center gap-4">
                 <div className="size-6 text-primary">
                     <svg
@@ -43,7 +50,11 @@ export default function TopNavBar() {
                     className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-300"
                     title={t.common.theme}
                 >
-                    {theme === "dark" ? <MdLightMode className="text-xl" /> : <MdDarkMode className="text-xl" />}
+                    {mounted ? (
+                        theme === "dark" ? <MdLightMode className="text-xl" /> : <MdDarkMode className="text-xl" />
+                    ) : (
+                        <div className="w-5 h-5" />
+                    )}
                 </button>
 
                 {/* Language Toggle */}
@@ -53,7 +64,7 @@ export default function TopNavBar() {
                     title={t.common.language}
                 >
                     <MdTranslate className="text-xl" />
-                    <span>{locale === "en" ? "EN" : "VI"}</span>
+                    <span className="min-w-[24px]">{locale === "en" ? "EN" : "VI"}</span>
                 </button>
 
                 {!isHomePage ? (
@@ -65,25 +76,25 @@ export default function TopNavBar() {
                         <span className="hidden sm:inline">{t.common.returnToDashboard}</span>
                     </Link>
                 ) : (
-                    <div className="hidden sm:flex items-center gap-9">
-                        <Link
+                    <div className="hidden sm:flex items-center gap-6">
+                        {/* <Link
                             href="#"
-                            className="text-sm font-medium leading-normal text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+                            className="text-sm font-medium leading-normal text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-center min-w-[60px]"
                         >
                             {t.common.tests}
                         </Link>
                         <Link
                             href="#"
-                            className="text-sm font-medium leading-normal text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+                            className="text-sm font-medium leading-normal text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-center min-w-[70px]"
                         >
                             {t.common.about}
                         </Link>
                         <Link
                             href="#"
-                            className="text-sm font-medium leading-normal text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+                            className="text-sm font-medium leading-normal text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-center min-w-[60px]"
                         >
                             {t.common.support}
-                        </Link>
+                        </Link> */}
                     </div>
                 )}
             </nav>
