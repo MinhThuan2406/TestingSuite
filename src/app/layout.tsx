@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import TopNavBar from "@/components/TopNavBar";
+import { Providers } from "@/providers/Providers";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -10,7 +11,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "HardwareTest Pro",
-  description: "Test your hardware instantly.",
+  description: "Free online hardware testing tools",
 };
 
 export default function RootLayout({
@@ -19,15 +20,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${spaceGrotesk.variable} flex flex-col min-h-screen`}
         suppressHydrationWarning
       >
-        <TopNavBar />
-        <div className="flex-grow">
-          {children}
-        </div>
+        <Providers>
+          <TopNavBar />
+          <div className="flex-grow">
+            {children}
+          </div>
+        </Providers>
       </body>
     </html>
   );
