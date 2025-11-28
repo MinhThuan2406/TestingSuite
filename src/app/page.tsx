@@ -46,13 +46,13 @@ export default function Home() {
       title: "External Peripherals",
       description: "A general test for webcam and other connected USB devices.",
       icon: <MdUsb />,
-      path: null,
+      path: "/tests/peripherals/webcam",
     },
     {
       title: "CPU & RAM Test",
       description: "A simple stress test to check basic performance metrics.",
       icon: <MdMemory />,
-      path: null,
+      path: "/tests/performance",
     },
   ];
 

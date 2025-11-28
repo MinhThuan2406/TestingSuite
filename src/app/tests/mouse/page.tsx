@@ -14,10 +14,17 @@ export default function MouseTest() {
 
     useEffect(() => {
         const handleMouseDown = (e: MouseEvent) => {
+            // Prevent default for side buttons (3: Back, 4: Forward) to stop browser navigation
+            if (e.button === 3 || e.button === 4) {
+                e.preventDefault();
+            }
             setClicks((prev) => ({ ...prev, [e.button]: true }));
         };
 
         const handleMouseUp = (e: MouseEvent) => {
+            if (e.button === 3 || e.button === 4) {
+                e.preventDefault();
+            }
             setClicks((prev) => ({ ...prev, [e.button]: false }));
         };
 
@@ -61,6 +68,9 @@ export default function MouseTest() {
         setClicks({});
         setScroll(0);
         setPollingRate(0);
+        setPosition({ x: 0, y: 0 });
+        eventsCountRef.current = 0;
+        lastTimeRef.current = performance.now();
     };
 
     return (
