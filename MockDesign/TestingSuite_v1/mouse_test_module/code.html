@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mouse Tester - Hardware Test Suite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d93f2",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#121212",
+                        "panel-dark": "#1E1E1E",
+                        "text-light": "#EAEAEA",
+                        "text-secondary": "#A0A0A0",
+                        "success": "#28A745"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light antialiased">
+<div class="relative flex min-h-screen w-full flex-col">
+<div class="flex h-full grow flex-col">
+<div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-5">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-4 sm:px-6 lg:px-10 py-3">
+<div class="flex items-center gap-4 text-text-light">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_319)">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_6_319"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-text-light text-lg font-bold leading-tight tracking-[-0.015em]">Hardware Test Suite</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-text-light text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-text-light text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Keyboard Test</a>
+<a class="text-text-light text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Monitor Test</a>
+<a class="text-text-light text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">About</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="truncate">Contact Us</span>
+</button>
+</div>
+<div class="md:hidden">
+<button class="text-text-light">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="mt-8">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 p-4">
+<a class="text-text-secondary text-base font-medium leading-normal hover:text-primary transition-colors" href="#">Hardware Test Suite</a>
+<span class="text-text-secondary text-base font-medium leading-normal">/</span>
+<span class="text-text-light text-base font-medium leading-normal">Mouse Tester</span>
+</div>
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between gap-3 p-4">
+<div class="flex min-w-72 flex-col gap-3">
+<p class="text-text-light text-4xl font-black leading-tight tracking-[-0.033em]">Mouse Testing Suite</p>
+<p class="text-text-secondary text-base font-normal leading-normal max-w-2xl">A modern, intuitive, and responsive screen dedicated to comprehensive mouse testing. Use the tools below to analyze your mouse's performance.</p>
+</div>
+</div>
+<!-- Main Grid Layout for Testing Modules -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 p-4 mt-6">
+<!-- 1. Cursor Path Visualizer -->
+<div class="flex flex-col gap-4 rounded-xl bg-panel-dark p-6 border border-white/10">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-text-light text-[22px] font-bold leading-tight tracking-[-0.015em]">Cursor Path Visualizer</h2>
+<p class="text-text-secondary text-sm font-normal leading-normal pt-1">Move your mouse around to see its path.</p>
+</div>
+<button class="flex items-center gap-2 rounded-lg h-9 px-3 bg-white/5 text-text-secondary text-sm font-medium hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-base">delete</span>
+<span>Clear Path</span>
+</button>
+</div>
+<div class="flex-grow min-h-[300px] bg-background-dark rounded-lg border border-white/10 relative overflow-hidden">
+<!-- Interactive canvas would be here. This is a placeholder. -->
+<svg class="absolute inset-0" height="100%" width="100%">
+<path d="M50 150 Q 150 50, 250 150 T 450 150" fill="none" stroke="#00ffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="filter: drop-shadow(0 0 5px #00ffff);"></path>
+<path d="M100 250 C 150 200, 250 300, 300 250 S 400 200, 450 250" fill="none" stroke="#ff00ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="filter: drop-shadow(0 0 5px #ff00ff);"></path>
+</svg>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent"></div>
+</div>
+</div>
+<!-- 2. Click Latency Test -->
+<div class="flex flex-col gap-4 rounded-xl bg-panel-dark p-6 border border-white/10">
+<h2 class="text-text-light text-[22px] font-bold leading-tight tracking-[-0.015em]">Click Latency Test</h2>
+<p class="text-text-secondary text-sm font-normal leading-normal -mt-3">Click the target area to begin.</p>
+<div class="flex-grow min-h-[300px] flex flex-col items-center justify-center gap-4 bg-background-dark rounded-lg border border-white/10 p-4">
+<p class="text-text-secondary text-lg">Latency</p>
+<p class="text-success text-6xl font-bold tracking-tighter">12.53 ms</p>
+<button class="mt-4 w-full h-24 rounded-lg bg-primary/20 border-2 border-dashed border-primary text-primary font-bold text-xl hover:bg-primary/30 hover:border-solid transition-all duration-300">
+                                    Click Me
+                                </button>
+</div>
+</div>
+<!-- 3. Scroll Wheel Detection -->
+<div class="flex flex-col gap-4 rounded-xl bg-panel-dark p-6 border border-white/10">
+<h2 class="text-text-light text-[22px] font-bold leading-tight tracking-[-0.015em]">Scroll Wheel Detection</h2>
+<p class="text-text-secondary text-sm font-normal leading-normal -mt-3">Use your scroll wheel (up/down/left/right).</p>
+<div class="flex-grow min-h-[300px] flex items-center justify-center gap-10 bg-background-dark rounded-lg border border-white/10 p-4">
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-4xl text-text-secondary/50">keyboard_arrow_up</span>
+<span class="material-symbols-outlined text-6xl text-primary animate-pulse">keyboard_arrow_up</span>
+<span class="text-text-secondary mt-2">Up</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-6xl text-primary animate-pulse">keyboard_arrow_down</span>
+<span class="material-symbols-outlined text-4xl text-text-secondary/50">keyboard_arrow_down</span>
+<span class="text-text-secondary mt-2">Down</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-4xl text-text-secondary/50 -rotate-90">keyboard_arrow_up</span>
+<span class="text-text-secondary mt-2">Left</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-4xl text-text-secondary/50 rotate-90">keyboard_arrow_up</span>
+<span class="text-text-secondary mt-2">Right</span>
+</div>
+</div>
+</div>
+<!-- 4. DPI Analyzer -->
+<div class="flex flex-col gap-4 rounded-xl bg-panel-dark p-6 border border-white/10">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-text-light text-[22px] font-bold leading-tight tracking-[-0.015em]">DPI Analyzer</h2>
+<p class="text-text-secondary text-sm font-normal leading-normal pt-1">Move your mouse 1 inch (2.54 cm) to test.</p>
+</div>
+<button class="flex items-center gap-2 rounded-lg h-9 px-3 bg-white/5 text-text-secondary text-sm font-medium hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-base">restart_alt</span>
+<span>Reset</span>
+</button>
+</div>
+<div class="flex-grow min-h-[300px] flex flex-col items-center justify-center gap-4 bg-background-dark rounded-lg border border-white/10 p-4">
+<p class="text-text-secondary text-lg">Detected DPI</p>
+<p class="text-primary text-6xl font-bold tracking-tighter">1200</p>
+<div class="w-full mt-6 px-4">
+<div class="relative w-full h-10 flex items-center">
+<!-- Ruler background -->
+<div class="w-full h-1 bg-white/10 rounded-full"></div>
+<!-- Ruler markings -->
+<div class="absolute top-1/2 -translate-y-1/2 w-full flex justify-between text-xs text-text-secondary">
+<span class="block h-3 w-px bg-white/20 relative"><span class="absolute -bottom-5 left-1/2 -translate-x-1/2">0</span></span>
+<span class="block h-2 w-px bg-white/20"></span>
+<span class="block h-2 w-px bg-white/20"></span>
+<span class="block h-2 w-px bg-white/20"></span>
+<span class="block h-3 w-px bg-white/20 relative"><span class="absolute -bottom-5 left-1/2 -translate-x-1/2">1 in</span></span>
+<span class="block h-2 w-px bg-white/20"></span>
+<span class="block h-2 w-px bg-white/20"></span>
+<span class="block h-2 w-px bg-white/20"></span>
+<span class="block h-3 w-px bg-white/20 relative"><span class="absolute -bottom-5 left-1/2 -translate-x-1/2">2 in</span></span>
+</div>
+<!-- Mouse position indicator -->
+<div class="absolute top-1/2 -translate-y-1/2 w-0.5 h-6 bg-primary rounded-full" style="left: 60%;">
+<div class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary"></div>
+<div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary"></div>
+</div>
+</div>
+<p class="text-center text-xs text-text-secondary mt-6">1. Place mouse at '0'.  2. Move it exactly one inch.  3. Click to lock DPI.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</body></html>

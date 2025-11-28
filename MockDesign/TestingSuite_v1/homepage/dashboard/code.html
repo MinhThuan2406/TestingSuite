@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HardwareTest Pro - Test Your Hardware Instantly</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0d93f2",
+              "background-light": "#f5f7f8",
+              "background-dark": "#101b22",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col w-full max-w-5xl px-4">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-b-[#283239] px-4 sm:px-10 py-3">
+<div class="flex items-center gap-4">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white">HardwareTest Pro</h2>
+</div>
+<nav class="hidden sm:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-sm font-medium leading-normal text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Tests</a>
+<a class="text-sm font-medium leading-normal text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">About</a>
+<a class="text-sm font-medium leading-normal text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Support</a>
+</div>
+</nav>
+</header>
+<main class="flex-grow">
+<!-- HeroSection -->
+<div class="py-16 sm:py-24 text-center">
+<div class="flex flex-col gap-4">
+<h1 class="text-4xl font-black leading-tight tracking-tighter sm:text-5xl text-gray-900 dark:text-white">
+                                    Test Your Hardware. Instantly.
+                                </h1>
+<h2 class="text-base font-normal leading-normal sm:text-lg text-gray-600 dark:text-[#9cadba]">
+                                    A suite of free, browser-based tools to check your PC and laptop components.
+                                </h2>
+</div>
+</div>
+<!-- TextGrid (Category Cards) -->
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 p-4">
+<!-- Display Test Card -->
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-[#3b4a54] bg-white dark:bg-[#1b2227] p-6 transition-shadow hover:shadow-lg dark:hover:shadow-primary/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">desktop_windows</span>
+<h3 class="text-lg font-bold leading-tight text-gray-900 dark:text-white">Display Test</h3>
+</div>
+<p class="text-sm font-normal leading-normal text-gray-600 dark:text-[#9cadba]">Check for dead pixels, color accuracy, and screen bleed.</p>
+<button class="mt-auto flex w-full cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Start Test</span>
+</button>
+</div>
+<!-- Speaker & Audio Test Card -->
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-[#3b4a54] bg-white dark:bg-[#1b2227] p-6 transition-shadow hover:shadow-lg dark:hover:shadow-primary/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">speaker_group</span>
+<h3 class="text-lg font-bold leading-tight text-gray-900 dark:text-white">Speaker &amp; Audio Test</h3>
+</div>
+<p class="text-sm font-normal leading-normal text-gray-600 dark:text-[#9cadba]">Test stereo channels, frequency response, and microphone input.</p>
+<button class="mt-auto flex w-full cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Start Test</span>
+</button>
+</div>
+<!-- Keyboard Test Card -->
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-[#3b4a54] bg-white dark:bg-[#1b2227] p-6 transition-shadow hover:shadow-lg dark:hover:shadow-primary/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">keyboard</span>
+<h3 class="text-lg font-bold leading-tight text-gray-900 dark:text-white">Keyboard Test</h3>
+</div>
+<p class="text-sm font-normal leading-normal text-gray-600 dark:text-[#9cadba]">Verify key presses, ghosting, and rollover functionality.</p>
+<button class="mt-auto flex w-full cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Start Test</span>
+</button>
+</div>
+<!-- Mouse Test Card -->
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-[#3b4a54] bg-white dark:bg-[#1b2227] p-6 transition-shadow hover:shadow-lg dark:hover:shadow-primary/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">mouse</span>
+<h3 class="text-lg font-bold leading-tight text-gray-900 dark:text-white">Mouse Test</h3>
+</div>
+<p class="text-sm font-normal leading-normal text-gray-600 dark:text-[#9cadba]">Test clicks, scrolling, DPI, and polling rate.</p>
+<button class="mt-auto flex w-full cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Start Test</span>
+</button>
+</div>
+<!-- External Peripherals Test Card -->
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-[#3b4a54] bg-white dark:bg-[#1b2227] p-6 transition-shadow hover:shadow-lg dark:hover:shadow-primary/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">usb</span>
+<h3 class="text-lg font-bold leading-tight text-gray-900 dark:text-white">External Peripherals</h3>
+</div>
+<p class="text-sm font-normal leading-normal text-gray-600 dark:text-[#9cadba]">A general test for webcam and other connected USB devices.</p>
+<button class="mt-auto flex w-full cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Start Test</span>
+</button>
+</div>
+<!-- CPU & RAM Test Card -->
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-[#3b4a54] bg-white dark:bg-[#1b2227] p-6 transition-shadow hover:shadow-lg dark:hover:shadow-primary/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">memory</span>
+<h3 class="text-lg font-bold leading-tight text-gray-900 dark:text-white">CPU &amp; RAM Test</h3>
+</div>
+<p class="text-sm font-normal leading-normal text-gray-600 dark:text-[#9cadba]">A simple stress test to check basic performance metrics.</p>
+<button class="mt-auto flex w-full cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Start Test</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col gap-8 px-5 py-10 text-center border-t border-gray-200 dark:border-t-[#283239] mt-24">
+<div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+<a class="text-base font-normal leading-normal text-gray-600 dark:text-[#9cadba] hover:text-primary dark:hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-base font-normal leading-normal text-gray-600 dark:text-[#9cadba] hover:text-primary dark:hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-base font-normal leading-normal text-gray-600 dark:text-[#9cadba] hover:text-primary dark:hover:text-primary transition-colors" href="#">Support</a>
+</div>
+<p class="text-sm font-normal leading-normal text-gray-500 dark:text-[#9cadba]">© 2024 HardwareTest Pro. All rights reserved.</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>

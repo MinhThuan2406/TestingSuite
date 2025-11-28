@@ -1,0 +1,31 @@
+import Link from "next/link";
+
+export default function Footer() {
+    return (
+        <footer className="flex flex-col gap-8 px-5 py-10 text-center border-t border-gray-200 dark:border-t-[#283239] mt-24">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+                <Link
+                    href="#"
+                    className="text-base font-normal leading-normal text-gray-600 dark:text-[#9cadba] hover:text-primary dark:hover:text-primary transition-colors"
+                >
+                    Privacy Policy
+                </Link>
+                <Link
+                    href="#"
+                    className="text-base font-normal leading-normal text-gray-600 dark:text-[#9cadba] hover:text-primary dark:hover:text-primary transition-colors"
+                >
+                    Terms of Service
+                </Link>
+                <Link
+                    href="#"
+                    className="text-base font-normal leading-normal text-gray-600 dark:text-[#9cadba] hover:text-primary dark:hover:text-primary transition-colors"
+                >
+                    Support
+                </Link>
+            </div>
+            <p className="text-sm font-normal leading-normal text-gray-500 dark:text-[#9cadba]">
+                © {new Date().getFullYear()} HardwareTest Pro. All rights reserved.
+            </p>
+        </footer>
+    );
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Display Testing Tool</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d93f2",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101b22",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+
+        .material-symbols-outlined.fill {
+            font-variation-settings:
+                'FILL' 1,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<div class="flex h-full min-h-screen grow">
+<!-- SideNavBar -->
+<aside class="flex w-72 flex-col justify-between border-r border-slate-200/10 bg-background-light p-4 dark:bg-background-dark/50">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 p-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="A blue and purple circular gradient logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAz2d-CmKLdEpR0a7UAjJFbZZZpOdJQVq7ioDOK9ALFn5IJp9XEXoJDnlsrmlMR92C553rPPBK7YXY4ASt4R9cUHJKBVSsOiDt63BskDLoJHwFRbL-_QT2oQU7vNGQGZKxtwTPW7gH8DlOk0xRLFmMNPaQgYv5CH2HXYQJfE1ICmFZgT9-cp_lhnnHIh8khsK04OQnzvfLAQow93SGLqNt8qp7pt48TBacTJYb9Z-FN5JdSlOuI6pT3bpJP1L91LO_ODo46JKVghES_");'></div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-medium leading-normal">Display Testing</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">PC Hardware Tools</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined fill text-primary">brightness_medium</span>
+<p class="text-sm font-medium leading-normal">Brightness</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-200/60 dark:hover:bg-slate-800/60 group" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white">palette</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal group-hover:text-slate-900 dark:group-hover:text-white">Color Accuracy</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-200/60 dark:hover:bg-slate-800/60 group" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white">grid_on</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal group-hover:text-slate-900 dark:group-hover:text-white">Dead Pixels</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-200/60 dark:hover:bg-slate-800/60 group" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white">blur_on</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal group-hover:text-slate-900 dark:group-hover:text-white">Motion Blur</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-200/60 dark:hover:bg-slate-800/60 group" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white">contrast</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal group-hover:text-slate-900 dark:group-hover:text-white">Contrast</p>
+</a>
+</nav>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-slate-300 dark:hover:bg-slate-700">
+<span class="truncate">Back to Dashboard</span>
+</button>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto">
+<div class="mx-auto max-w-4xl p-8">
+<!-- Header -->
+<header class="flex items-center justify-between pb-6 border-b border-slate-200/10">
+<div>
+<h1 class="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">Brightness Test</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal mt-1">Adjust the slider to test your display's brightness levels. You can also input a precise value.</p>
+</div>
+<button class="flex items-center gap-2 min-w-[84px] cursor-pointer justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90">
+<span class="material-symbols-outlined">fullscreen</span>
+<span class="truncate">Enter Full Screen</span>
+</button>
+</header>
+<!-- Test Canvas & Controls -->
+<div class="flex flex-col lg:flex-row gap-8 mt-8">
+<!-- Canvas -->
+<div class="flex-1 flex items-center justify-center rounded-xl bg-slate-900 p-4 aspect-[16/9]">
+<div class="w-full h-full bg-center bg-cover rounded-lg" data-alt="A grayscale image showing a gradient from pure white to pure black, used for brightness and contrast testing." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCYhH9wEG7huMo5TSoB5kLbik5Tvq-YJIAVoIDTzOIe0IR2pomlZNHK9pkIwvDn4RCLeyGNnmiBNDuZoYtWYK-RHsf9wqNnmoDDnVccBAiEdTHXDoqm6MRy57X12sDokpAvxH6UZPnE067UNqLxqTZydBTvjh0J8GxNNw4h2PXhxW10v7ZbLFsFEhMK32vbKoD9ccDliAQyMEoEYnr8Nm4FfYf_3QB-hq7rBV-guuyOkaQ1REK75PnE2UcLb8fFFfmBcAA9seLcrg6R");'></div>
+</div>
+<!-- Controls -->
+<div class="w-full lg:w-72 flex flex-col gap-6">
+<!-- Brightness Slider -->
+<div class="w-full rounded-xl border border-slate-200/10 bg-background-light p-4 dark:bg-background-dark/50">
+<div class="flex w-full shrink-0 items-center justify-between">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Brightness Level</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">75%</p>
+</div>
+<div class="flex h-4 w-full items-center gap-4 mt-3">
+<div class="flex h-1.5 flex-1 rounded-full bg-slate-300 dark:bg-slate-700">
+<div class="relative h-full w-[75%] rounded-full bg-primary">
+<div class="absolute -right-2 -top-1.5 size-5 cursor-pointer rounded-full bg-white border-2 border-primary"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Accordions for other tests -->
+<div class="flex flex-col gap-2">
+<details class="flex flex-col rounded-lg border border-slate-200/10 bg-transparent px-4 group">
+<summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-3">
+<p class="text-slate-900 dark:text-white text-sm font-medium leading-normal">Color Accuracy Patterns</p>
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal pb-4">
+                                        Select a pattern to check your screen's color reproduction.
+                                        <div class="grid grid-cols-3 gap-2 mt-3">
+<div class="aspect-square rounded bg-slate-200 dark:bg-slate-800" data-alt="Primary color red swatch"></div>
+<div class="aspect-square rounded bg-slate-200 dark:bg-slate-800" data-alt="Primary color green swatch"></div>
+<div class="aspect-square rounded bg-slate-200 dark:bg-slate-800" data-alt="Primary color blue swatch"></div>
+<div class="aspect-square rounded bg-slate-200 dark:bg-slate-800" data-alt="Skin tone color swatch"></div>
+<div class="aspect-square rounded bg-slate-200 dark:bg-slate-800" data-alt="Grayscale gradient swatch"></div>
+<div class="aspect-square rounded bg-slate-200 dark:bg-slate-800" data-alt="Full color spectrum swatch"></div>
+</div>
+</div>
+</details>
+<details class="flex flex-col rounded-lg border border-slate-200/10 bg-transparent px-4 group">
+<summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-3">
+<p class="text-slate-900 dark:text-white text-sm font-medium leading-normal">Dead-Pixel Grid</p>
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal pb-4">
+                                        Launch a full-screen solid color to easily spot dead or stuck pixels on your display.
+                                    </p>
+</details>
+<details class="flex flex-col rounded-lg border border-slate-200/10 bg-transparent px-4 group">
+<summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-3">
+<p class="text-slate-900 dark:text-white text-sm font-medium leading-normal">Motion Blur Test</p>
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal pb-4">
+                                        Observe moving patterns to check for motion blur and ghosting.
+                                    </p>
+</details>
+<details class="flex flex-col rounded-lg border border-slate-200/10 bg-transparent px-4 group">
+<summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-3">
+<p class="text-slate-900 dark:text-white text-sm font-medium leading-normal">Contrast Evaluation</p>
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal pb-4">
+                                        Use various patterns to evaluate the contrast ratio of your screen.
+                                    </p>
+</details>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

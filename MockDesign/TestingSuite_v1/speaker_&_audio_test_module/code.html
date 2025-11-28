@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Speaker &amp; Audio Test</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0d93f2",
+              "background-light": "#f8f9fa",
+              "background-dark": "#101b22",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-b-[#283239] px-4 sm:px-10 py-3">
+<div class="flex items-center gap-4 text-black dark:text-white">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined text-4xl">graphic_eq</span>
+</div>
+<h2 class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">HardwareTest</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-black dark:text-white text-sm font-medium leading-normal" href="#">CPU</a>
+<a class="text-black dark:text-white text-sm font-medium leading-normal" href="#">GPU</a>
+<a class="text-black dark:text-white text-sm font-medium leading-normal" href="#">Memory</a>
+<a class="text-black dark:text-white text-sm font-medium leading-normal" href="#">Storage</a>
+<a class="text-primary dark:text-primary text-sm font-bold leading-normal" href="#">Audio</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Login</span>
+</button>
+</div>
+</header>
+<main class="flex flex-col gap-8 p-4 sm:p-6 md:p-8">
+<div class="flex flex-wrap gap-2">
+<a class="text-gray-500 dark:text-[#9cadba] text-base font-medium leading-normal" href="#">Home</a>
+<span class="text-gray-500 dark:text-[#9cadba] text-base font-medium leading-normal">/</span>
+<span class="text-black dark:text-white text-base font-medium leading-normal">Audio</span>
+</div>
+<div class="flex flex-wrap justify-between gap-3">
+<div class="flex min-w-72 flex-col gap-3">
+<p class="text-black dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Speaker &amp; Audio Test</p>
+<p class="text-gray-600 dark:text-[#9cadba] text-base font-normal leading-normal">Set your system volume to 50% before starting for the most accurate results.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#19252e] p-6">
+<div class="flex flex-col gap-1">
+<p class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Frequency Sweep Test</p>
+<p class="text-gray-600 dark:text-[#9cadba] text-sm font-normal leading-normal">Test your speaker's frequency response from low to high.</p>
+</div>
+<div class="flex items-center justify-center h-24 bg-gray-100 dark:bg-background-dark rounded-lg overflow-hidden">
+<img alt="Abstract audio waveform visualization" class="w-full h-full object-cover" data-alt="Abstract audio waveform visualization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Tq2nhWdgc8SbEARtVsxKx9IMYB-2HxGgjOz61GTDqDBTTjh96AeX2iCxvK6-eOXyYcfR2taATYfL7qDuQO96qUaXNgE0TWrChQr621-nNqMoz4y-M_7RqvknoCynzvRlhrtAEX5bpownni2pkgQBxjQhX2jOJNyP_zidxr6lTklI4x6rfWWJxj7zA43c1aLBug6XrjFFH3ZgN777kW-HjX-2BUV3D7uD_ZJ5rLATgCejshlkh4PIqvFLwauvPhO0zr_Tvt1ZMwcf"/>
+</div>
+<div class="relative flex w-full flex-col items-start justify-between gap-3 pt-4">
+<div class="flex h-[38px] w-full items-center">
+<div class="flex h-1 w-full rounded-sm bg-gray-300 dark:bg-[#3b4a54]">
+<div class="relative w-[10%]">
+<div class="absolute -left-2 -top-1.5 flex flex-col items-center gap-1">
+<div class="size-4 rounded-full bg-primary ring-2 ring-primary/30"></div>
+<p class="text-black dark:text-white text-sm font-normal leading-normal whitespace-nowrap">20 Hz</p>
+</div>
+</div>
+<div class="h-1 flex-1 rounded-sm bg-primary"></div>
+<div class="relative w-[10%]">
+<div class="absolute -right-2.5 -top-1.5 flex flex-col items-center gap-1">
+<div class="size-4 rounded-full bg-white dark:bg-gray-400 border border-gray-300 dark:border-gray-500"></div>
+<p class="text-black dark:text-white text-sm font-normal leading-normal whitespace-nowrap">20 kHz</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="flex items-center justify-center gap-2 w-full cursor-pointer overflow-hidden rounded-lg h-11 px-4 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined">play_arrow</span>
+<span class="truncate">Start Sweep</span>
+</button>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#19252e] p-6">
+<div class="flex flex-col gap-1">
+<p class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Left / Right Channel Check</p>
+<p class="text-gray-600 dark:text-[#9cadba] text-sm font-normal leading-normal">Isolate and verify audio output from each speaker.</p>
+</div>
+<div class="flex items-center justify-center h-24 bg-gray-100 dark:bg-background-dark rounded-lg overflow-hidden">
+<img alt="Abstract stereo sound wave visualization" class="w-full h-full object-cover" data-alt="Abstract stereo sound wave visualization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXTkx_AmXXp5mUjQ6ZvDtEmKVhWHRBrMhPOmyvzrzEq4dgS0g31CiK5rOdVmr4oTJUDN4lh4dO5r_KO2NE2wQbIUH3-aXqrAiJnx96lV8YWQdQGr9E4CC7LGxi6wlZ4weSefwIRQhGfYi-hp6A8bc-yytyybHO8mgfv_TRdmTGe2mwn3LHOlzjpue7_UwKg52z96Kr4Lbvjk-AoU62vS4NJ0u3FU4mrjNh0w5aVEGowLzvCYDCDyaQ5R8RrUyOlneTL_O0q4GBBWdP"/>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-auto pt-4">
+<button class="flex items-center justify-center gap-2 w-full cursor-pointer overflow-hidden rounded-lg h-11 px-4 bg-primary/20 text-primary text-base font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined">volume_up</span>
+<span class="truncate">Play Left</span>
+</button>
+<button class="flex items-center justify-center gap-2 w-full cursor-pointer overflow-hidden rounded-lg h-11 px-4 bg-primary/20 text-primary text-base font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined">volume_up</span>
+<span class="truncate">Play Right</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#19252e] p-6">
+<div class="flex flex-col gap-1">
+<p class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Clarity &amp; Detail Test</p>
+<p class="text-gray-600 dark:text-[#9cadba] text-sm font-normal leading-normal">Listen to high-fidelity audio samples to check for clarity and distortion.</p>
+</div>
+<div class="flex flex-col gap-3 pt-4">
+<div class="flex items-center justify-between p-3 rounded-lg bg-background-light dark:bg-background-dark">
+<span class="text-black dark:text-white text-sm font-medium">Acoustic Guitar</span>
+<button class="flex items-center justify-center size-8 rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-xl">play_arrow</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-primary/20">
+<span class="text-primary text-sm font-medium">Vocal Narration</span>
+<button class="flex items-center justify-center size-8 rounded-full bg-primary text-white">
+<span class="material-symbols-outlined text-xl">pause</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-background-light dark:bg-background-dark">
+<span class="text-black dark:text-white text-sm font-medium">Orchestral Piece</span>
+<button class="flex items-center justify-center size-8 rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-xl">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#19252e] p-6">
+<div class="flex flex-col gap-1">
+<p class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Volume &amp; Dynamic Range Test</p>
+<p class="text-gray-600 dark:text-[#9cadba] text-sm font-normal leading-normal">Check for consistent volume levels and speaker performance.</p>
+</div>
+<div class="flex items-center justify-center h-24 bg-gray-100 dark:bg-background-dark rounded-lg">
+<span class="text-black dark:text-white text-5xl font-bold">50%</span>
+</div>
+<div class="relative flex w-full flex-col items-start justify-between gap-3 pt-4">
+<div class="flex h-[38px] w-full items-center">
+<div class="flex h-1.5 w-full rounded-full bg-gray-300 dark:bg-[#3b4a54]">
+<div class="relative w-[50%] bg-primary rounded-full">
+<div class="absolute -right-2 -top-1.5 flex flex-col items-center gap-1">
+<div class="size-4 rounded-full bg-primary ring-2 ring-primary/30"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="flex items-center justify-center gap-2 w-full cursor-pointer overflow-hidden rounded-lg h-11 px-4 bg-primary/20 text-primary text-base font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined">play_arrow</span>
+<span class="truncate">Play Test Tone</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+</body></html>
