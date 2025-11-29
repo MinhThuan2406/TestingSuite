@@ -2,33 +2,24 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MdDashboard, MdDarkMode, MdLightMode, MdTranslate } from "react-icons/md";
-import { useTheme } from "next-themes";
+import { MdDashboard, MdTranslate } from "react-icons/md";
 import { useLanguage } from "@/providers/Providers";
-import { useState, useEffect } from "react";
+import ThemeToggle from "./ThemeToggle";
+import { useState } from "react";
 
 export default function TopNavBar() {
     const pathname = usePathname();
     const isHomePage = pathname === "/";
-    const { theme, setTheme } = useTheme();
     const { locale, setLocale, t } = useLanguage();
-    const [mounted, setMounted] = useState(false);
 
-    // Only render theme icon after mounting to prevent hydration errors
-    useEffect(() => {
-        setMounted(true);
-    }, []);
 
-    const toggleTheme = () => {
-        setTheme(theme === "dark" ? "light" : "dark");
-    };
 
     const toggleLanguage = () => {
         setLocale(locale === "en" ? "vi" : "en");
     };
 
     return (
-        <header className="flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-b-[#283239] px-4 sm:px-10 py-1 bg-background text-foreground transition-colors">
+        <header className="flex items-center justify-between whitespace-nowrap border-b border-[var(--border)] px-4 sm:px-10 py-1 bg-background text-foreground">
             <Link href="/" className="flex items-center gap-4">
                 <div className="size-6 text-primary">
                     <svg
@@ -45,17 +36,8 @@ export default function TopNavBar() {
             </Link>
             <nav className="flex items-center gap-4 sm:gap-6">
                 {/* Theme Toggle */}
-                <button
-                    onClick={toggleTheme}
-                    className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-300"
-                    title={t.common.theme}
-                >
-                    {mounted ? (
-                        theme === "dark" ? <MdLightMode className="text-xl" /> : <MdDarkMode className="text-xl" />
-                    ) : (
-                        <div className="w-5 h-5" />
-                    )}
-                </button>
+                {/* Theme Toggle */}
+                <ThemeToggle />
 
                 {/* Language Toggle */}
                 <button
