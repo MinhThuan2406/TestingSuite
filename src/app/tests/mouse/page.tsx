@@ -2,8 +2,10 @@
 
 import { useState, useEffect, useRef } from "react";
 import { MdMouse, MdRefresh } from "react-icons/md";
+import { useLanguage } from "@/providers/Providers";
 
 export default function MouseTest() {
+    const { t } = useLanguage();
     const [clicks, setClicks] = useState<{ [key: number]: boolean }>({});
     const [scroll, setScroll] = useState(0);
     const [pollingRate, setPollingRate] = useState(0);
@@ -78,10 +80,10 @@ export default function MouseTest() {
             <header className="flex items-center justify-between pb-6 border-b border-slate-200/10 mb-8">
                 <div>
                     <h1 className="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">
-                        Mouse Test
+                        {t.mouse.title}
                     </h1>
                     <p className="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal mt-1">
-                        Test your mouse buttons, scroll wheel, and polling rate.
+                        {t.mouse.subtitle}
                     </p>
                 </div>
                 <button
@@ -89,7 +91,7 @@ export default function MouseTest() {
                     className="flex items-center gap-2 px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-lg font-medium transition-colors"
                 >
                     <MdRefresh className="text-xl" />
-                    Reset
+                    {t.common.reset}
                 </button>
             </header>
 

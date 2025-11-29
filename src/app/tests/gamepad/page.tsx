@@ -2,10 +2,12 @@
 
 import { useState, useEffect, useRef } from "react";
 import { MdGamepad, MdVideogameAsset } from "react-icons/md";
+import { useLanguage } from "@/providers/Providers";
 
 type GamepadLayout = "xbox" | "playstation";
 
 export default function GamepadTest() {
+    const { t } = useLanguage();
     const [gamepads, setGamepads] = useState<(Gamepad | null)[]>([]);
     const [selectedLayout, setSelectedLayout] = useState<GamepadLayout>("xbox");
     const requestRef = useRef<number>(0);
@@ -35,10 +37,10 @@ export default function GamepadTest() {
             <header className="flex items-center justify-between pb-6 border-b border-slate-200/10 mb-8">
                 <div>
                     <h1 className="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">
-                        Gamepad Test
+                        {t.gamepad.title}
                     </h1>
                     <p className="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal mt-1">
-                        Connect your controller and test buttons, triggers, and analog sticks.
+                        {t.gamepad.subtitle}
                     </p>
                 </div>
                 <div className="flex items-center gap-4">

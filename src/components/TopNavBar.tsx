@@ -6,6 +6,7 @@ import { MdDashboard, MdTranslate } from "react-icons/md";
 import { useLanguage } from "@/providers/Providers";
 import ThemeToggle from "./ThemeToggle";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function TopNavBar() {
     const pathname = usePathname();
@@ -40,14 +41,27 @@ export default function TopNavBar() {
                 <ThemeToggle />
 
                 {/* Language Toggle */}
-                <button
+                <motion.button
                     onClick={toggleLanguage}
                     className="flex items-center gap-1 px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-sm font-medium text-gray-600 dark:text-gray-300"
                     title={t.common.language}
+                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.05 }}
                 >
                     <MdTranslate className="text-xl" />
-                    <span className="min-w-[24px]">{locale === "en" ? "EN" : "VI"}</span>
-                </button>
+                    <AnimatePresence mode="wait">
+                        <motion.span
+                            key={locale}
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 10 }}
+                            transition={{ duration: 0.2 }}
+                            className="min-w-[24px]"
+                        >
+                            {locale === "en" ? "EN" : "VI"}
+                        </motion.span>
+                    </AnimatePresence>
+                </motion.button>
 
                 {!isHomePage ? (
                     <Link
@@ -55,7 +69,18 @@ export default function TopNavBar() {
                         className="flex items-center gap-2 text-sm font-medium leading-normal text-primary hover:text-primary/80 transition-colors"
                     >
                         <MdDashboard className="text-lg" />
-                        <span className="hidden sm:inline">{t.common.returnToDashboard}</span>
+                        <AnimatePresence mode="wait">
+                            <motion.span
+                                key={locale}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.15 }}
+                                className="hidden sm:inline min-w-[160px]"
+                            >
+                                {t.common.returnToDashboard}
+                            </motion.span>
+                        </AnimatePresence>
                     </Link>
                 ) : (
                     <div className="hidden sm:flex items-center gap-6">

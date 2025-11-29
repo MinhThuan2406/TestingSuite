@@ -108,6 +108,31 @@ export const dictionary = {
             startMic: "Start Mic",
             micInstruction: "Click 'Start Mic' to visualize audio input",
         },
+        keyboard: {
+            title: "Keyboard Test",
+            subtitle: "Press keys on your keyboard to verify they are working correctly.",
+            fullscreenNote: "Note: Enter Fullscreen mode to test Windows/Meta keys.",
+            fullscreen: "Fullscreen",
+            exitFullscreen: "Exit Fullscreen",
+            lastPressed: "Last Pressed:",
+            totalDetected: "Total Detected:",
+        },
+        mouse: {
+            title: "Mouse Test",
+            subtitle: "Test your mouse buttons, scroll wheel, and movement tracking.",
+        },
+        webcam: {
+            title: "Webcam Test",
+            subtitle: "Test your camera feed and permissions.",
+        },
+        gamepad: {
+            title: "Gamepad Test",
+            subtitle: "Connect a gamepad and test buttons, triggers, and analog sticks.",
+        },
+        performance: {
+            title: "CPU & RAM Test",
+            subtitle: "View system specifications and benchmark CPU performance.",
+        },
     },
     vi: {
         common: {
@@ -215,6 +240,31 @@ export const dictionary = {
             microphoneTest: "Kiểm tra Microphone",
             startMic: "Bật Mic",
             micInstruction: "Nhấp 'Bật Mic' để hiển thị đầu vào âm thanh",
+        },
+        keyboard: {
+            title: "Kiểm tra Bàn phím",
+            subtitle: "Nhấn các phím trên bàn phím để xác minh chúng hoạt động chính xác.",
+            fullscreenNote: "Lưu ý: Vào chế độ Toàn màn hình để kiểm tra phím Windows/Meta.",
+            fullscreen: "Toàn màn hình",
+            exitFullscreen: "Thoát Toàn màn hình",
+            lastPressed: "Phím vừa nhấn:",
+            totalDetected: "Tổng số phát hiện:",
+        },
+        mouse: {
+            title: "Kiểm tra Chuột",
+            subtitle: "Kiểm tra các nút chuột, bánh xe cuộn và theo dõi chuyển động.",
+        },
+        webcam: {
+            title: "Kiểm tra Webcam",
+            subtitle: "Kiểm tra luồng camera và quyền truy cập.",
+        },
+        gamepad: {
+            title: "Kiểm tra Tay cầm",
+            subtitle: "Kết nối tay cầm và kiểm tra các nút bấm, cò và cần analog.",
+        },
+        performance: {
+            title: "Kiểm tra CPU & RAM",
+            subtitle: "Xem thông số hệ thống và chấm điểm hiệu năng CPU.",
         },
     },
 };

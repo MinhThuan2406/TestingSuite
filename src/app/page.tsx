@@ -9,7 +9,7 @@ import {
   MdSpeakerGroup,
   MdKeyboard,
   MdMouse,
-  MdUsb,
+  MdVideocam,
   MdMemory,
 } from "react-icons/md";
 import { useLanguage } from "@/providers/Providers";
@@ -46,14 +46,14 @@ export default function Home() {
     {
       title: t.dashboard.cards.webcam.title,
       description: t.dashboard.cards.webcam.description,
-      icon: <MdUsb />,
-      path: "/tests/peripherals/webcam",
+      icon: <MdVideocam />,
+      path: "/tests/webcam",
     },
     {
       title: t.dashboard.cards.gamepad.title,
       description: t.dashboard.cards.gamepad.description,
       icon: <MdGamepadIcon />, // Helper component below
-      path: "/tests/peripherals/gamepad",
+      path: "/tests/gamepad",
     },
     {
       title: t.dashboard.cards.performance.title,
@@ -80,7 +80,7 @@ export default function Home() {
 
             <main className="flex-grow">
               {/* Hero Section */}
-              <div className="py-2 sm:py-3 text-center">
+              <div className="py-2 sm:py-3 mb-16 sm:mb-20 text-center">
                 <div className="flex flex-col gap-1">
                   <h1 className="text-4xl font-black leading-tight tracking-tighter sm:text-5xl text-gray-900 dark:text-white">
                     {t.dashboard.heroTitle}

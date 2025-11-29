@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { MdKeyboard, MdRefresh, MdFullscreen, MdFullscreenExit } from "react-icons/md";
+import { useLanguage } from "@/providers/Providers";
 
 export default function KeyboardTest() {
+    const { t } = useLanguage();
     const [pressedKeys, setPressedKeys] = useState<Set<string>>(new Set());
     const [activeKeys, setActiveKeys] = useState<Set<string>>(new Set());
     const [lastPressed, setLastPressed] = useState<string>("");
@@ -100,12 +102,12 @@ export default function KeyboardTest() {
             <header className="flex items-center justify-between pb-6 border-b border-slate-200/10 mb-8">
                 <div>
                     <h1 className="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">
-                        Keyboard Test
+                        {t.keyboard.title}
                     </h1>
                     <p className="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal mt-1">
-                        Press keys on your keyboard to verify they are working correctly.
+                        {t.keyboard.subtitle}
                         <span className="block text-sm text-amber-600 dark:text-amber-400 mt-1">
-                            Note: Enter Fullscreen mode to test Windows/Meta keys.
+                            {t.keyboard.fullscreenNote}
                         </span>
                     </p>
                 </div>
@@ -116,14 +118,14 @@ export default function KeyboardTest() {
                         title="Fullscreen mode is required to block Windows key"
                     >
                         {isFullscreen ? <MdFullscreenExit className="text-xl" /> : <MdFullscreen className="text-xl" />}
-                        {isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
+                        {isFullscreen ? t.keyboard.exitFullscreen : t.keyboard.fullscreen}
                     </button>
                     <button
                         onClick={resetTest}
                         className="flex items-center gap-2 px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-lg font-medium transition-colors"
                     >
                         <MdRefresh className="text-xl" />
-                        Reset
+                        {t.common.reset}
                     </button>
                 </div>
             </header>
@@ -133,12 +135,12 @@ export default function KeyboardTest() {
                 <div className="flex gap-4 p-4 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
                     <div className="flex items-center gap-2">
                         <MdKeyboard className="text-primary text-xl" />
-                        <span className="text-slate-500 dark:text-slate-400">Last Pressed:</span>
+                        <span className="text-slate-500 dark:text-slate-400">{t.keyboard.lastPressed}</span>
                         <span className="font-mono font-bold text-slate-900 dark:text-white">{formatKeyDisplay(lastPressed) || "-"}</span>
                     </div>
                     <div className="h-6 w-px bg-slate-300 dark:bg-slate-600"></div>
                     <div className="flex items-center gap-2">
-                        <span className="text-slate-500 dark:text-slate-400">Total Detected:</span>
+                        <span className="text-slate-500 dark:text-slate-400">{t.keyboard.totalDetected}</span>
                         <span className="font-bold text-slate-900 dark:text-white">{pressedKeys.size}</span>
                     </div>
                 </div>

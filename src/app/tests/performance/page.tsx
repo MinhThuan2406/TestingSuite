@@ -2,8 +2,10 @@
 
 import { useState, useEffect, useRef } from "react";
 import { MdSpeed, MdMemory, MdPlayArrow, MdRefresh } from "react-icons/md";
+import { useLanguage } from "@/providers/Providers";
 
 export default function PerformanceTest() {
+    const { t } = useLanguage();
     const [systemInfo, setSystemInfo] = useState<{ cores: number; memory: number | string }>({
         cores: 0,
         memory: "Unknown",
@@ -68,10 +70,10 @@ export default function PerformanceTest() {
             <header className="flex items-center justify-between pb-6 border-b border-slate-200/10 mb-8">
                 <div>
                     <h1 className="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">
-                        CPU & RAM Test
+                        {t.performance.title}
                     </h1>
                     <p className="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal mt-1">
-                        Analyze your system specifications and benchmark CPU performance.
+                        {t.performance.subtitle}
                     </p>
                 </div>
             </header>

@@ -2,8 +2,10 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { MdVideocam, MdVideocamOff, MdRefresh, MdCamera } from "react-icons/md";
+import { useLanguage } from "@/providers/Providers";
 
 export default function WebcamTest() {
+    const { t } = useLanguage();
     const [devices, setDevices] = useState<MediaDeviceInfo[]>([]);
     const [selectedDeviceId, setSelectedDeviceId] = useState<string>("");
     const [stream, setStream] = useState<MediaStream | null>(null);
@@ -107,10 +109,10 @@ export default function WebcamTest() {
             <header className="flex items-center justify-between pb-6 border-b border-slate-200/10 mb-8">
                 <div>
                     <h1 className="text-slate-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">
-                        Webcam Test
+                        {t.webcam.title}
                     </h1>
                     <p className="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal mt-1">
-                        Test your camera resolution, frame rate, and functionality.
+                        {t.webcam.subtitle}
                     </p>
                 </div>
                 <div className="flex gap-3">
