@@ -46,6 +46,10 @@ export const dictionary = {
                     title: "CPU & RAM Test",
                     description: "Analyze system specifications and benchmark CPU performance.",
                 },
+                systemInfo: {
+                    title: "System Info",
+                    description: "View detailed CPU, RAM, and hardware information with our desktop app.",
+                },
             },
         },
         display: {
@@ -133,6 +137,28 @@ export const dictionary = {
             title: "CPU & RAM Test",
             subtitle: "View system specifications and benchmark CPU performance.",
         },
+        systemInfo: {
+            title: "System Information",
+            subtitle: "Get detailed hardware monitoring",
+            permissionDialog: {
+                title: "System Information Access",
+                message: "This website will guide you to download our desktop app to read your system information for testing purposes. Do you agree?",
+                agree: "Yes, Download App",
+                cancel: "Cancel",
+            },
+            downloadSection: {
+                title: "Download SystemAnalyzer",
+                description: "Our desktop application provides detailed system information including:",
+                feature1: "CPU name, cores, and frequency (current & max)",
+                feature2: "Total, used, and available RAM",
+                feature3: "Real-time monitoring with auto-refresh",
+                feature4: "Both console and graphical interfaces",
+                downloadButton: "Download for Windows",
+                fileSize: "File size: ~70 MB",
+                requirements: "Requirements: Windows 10/11",
+                helpText: "Having issues? View our installation guide.",
+            },
+        },
     },
     vi: {
         common: {
@@ -178,6 +204,10 @@ export const dictionary = {
                 performance: {
                     title: "Hiệu năng CPU & RAM",
                     description: "Phân tích thông số hệ thống và chấm điểm hiệu năng CPU.",
+                },
+                systemInfo: {
+                    title: "Thông tin Hệ thống",
+                    description: "Xem thông tin chi tiết về CPU, RAM và phần cứng bằng ứng dụng Desktop.",
                 },
             },
         },
@@ -265,6 +295,28 @@ export const dictionary = {
         performance: {
             title: "Kiểm tra CPU & RAM",
             subtitle: "Xem thông số hệ thống và chấm điểm hiệu năng CPU.",
+        },
+        systemInfo: {
+            title: "Thông tin Hệ thống",
+            subtitle: "Giám sát phần cứng chi tiết",
+            permissionDialog: {
+                title: "Xem Thông tin CPU & RAM",
+                message: "Để xem chi tiết thông tin hệ thống của bạn, chúng tôi cung cấp một ứng dụng Windows miễn phí. Bạn có muốn tải về không?",
+                agree: "Tải ứng dụng",
+                cancel: "Để sau",
+            },
+            downloadSection: {
+                title: "Tải SystemAnalyzer",
+                description: "Ứng dụng desktop của chúng tôi cung cấp thông tin hệ thống chi tiết bao gồm:",
+                feature1: "Tên CPU, số cores và tần số (hiện tại & tối đa)",
+                feature2: "Tổng RAM, đã dùng và còn trống",
+                feature3: "Giám sát thời gian thực với tự động làm mới",
+                feature4: "Giao diện console và đồ họa",
+                downloadButton: "Tải cho Windows",
+                fileSize: "Dung lượng: ~70 MB",
+                requirements: "Yêu cầu: Windows 10/11",
+                helpText: "Gặp vấn đề? Xem hướng dẫn cài đặt.",
+            },
         },
     },
 };

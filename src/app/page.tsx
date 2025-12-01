@@ -11,6 +11,7 @@ import {
   MdMouse,
   MdVideocam,
   MdMemory,
+  MdInfoOutline,
 } from "react-icons/md";
 import { useLanguage } from "@/providers/Providers";
 
@@ -60,6 +61,12 @@ export default function Home() {
       description: t.dashboard.cards.performance.description,
       icon: <MdMemory />,
       path: "/tests/performance",
+    },
+    {
+      title: t.dashboard.cards.systemInfo.title,
+      description: t.dashboard.cards.systemInfo.description,
+      icon: <MdInfoOutline />,
+      path: "/tests/system-info",
     },
   ];
 
