@@ -43,9 +43,12 @@ next-env.d.ts
 .github
 
 # SystemAnalyzer build artifacts
-SystemAnalyzer/publish/
-SystemAnalyzer/bin/
-SystemAnalyzer/obj/
-*.exe
-*.dll
-*.pdb
+**/bin/
+**/obj/
+**/publish/
+**/*.exe
+**/*.dll
+**/*.pdb
+
+# VS Code
+.vscode/
